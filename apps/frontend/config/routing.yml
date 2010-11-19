@@ -1,0 +1,27 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: home, action: index }
+entry_show:
+  url:   /noticias/:id/:slug
+  class:  sfPropelRoute
+  options: { model: Entry, type: object}
+  param: { module: entry, action: show}
+bases:
+  url:   /bases.html
+  param: { module: home, action: base}
+sf_guard_signin:
+  url:   /login
+  param: { module: sfGuardAuth, action: signin }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

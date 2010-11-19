@@ -1,0 +1,23 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Entry
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Entry
+    plural:                Entrys
+    route_prefix:          entry
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [=title, text, created_at]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:
+        display: [=title, text, slug]

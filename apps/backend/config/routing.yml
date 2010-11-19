@@ -1,0 +1,92 @@
+homepage:
+  url:   /
+  param: { module: entry, action: index }
+
+eval_type:
+  class: sfPropelRouteCollection
+  options:
+    model:                EvalType
+    module:               eval_type
+    prefix_path:          /eval_type
+    column:               id
+    with_wildcard_routes: true
+
+eval_question:
+  class: sfPropelRouteCollection
+  options:
+    model:                EvalQuestion
+    module:               eval_question
+    prefix_path:          /eval_question
+    column:               id
+    with_wildcard_routes: true
+
+evaluation:
+  class: sfPropelRouteCollection
+  options:
+    model:                Evaluation
+    module:               evaluation
+    prefix_path:          /evaluation
+    column:               id
+    with_wildcard_routes: true
+
+project_jury:
+  class: sfPropelRouteCollection
+  options:
+    model:                ProjectJury
+    module:               project_jury
+    prefix_path:          /project_jury
+    column:               id
+    with_wildcard_routes: true
+
+participant:
+  class: sfPropelRouteCollection
+  options:
+    model:                Participant
+    module:               participant
+    prefix_path:          /participant
+    column:               id
+    with_wildcard_routes: true
+
+project:
+  class: sfPropelRouteCollection
+  options:
+    model:                Project
+    module:               project
+    prefix_path:          /project
+    column:               id
+    with_wildcard_routes: true
+
+jury:
+  class: sfPropelRouteCollection
+  options:
+    model:                Jury
+    module:               jury
+    prefix_path:          /jury
+    column:               id
+    with_wildcard_routes: true
+
+entry:
+  class: sfPropelRouteCollection
+  options:
+    model:                Entry
+    module:               entry
+    prefix_path:          /entry
+    column:               id
+    with_wildcard_routes: true
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: default, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

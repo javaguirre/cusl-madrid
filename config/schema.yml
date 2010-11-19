@@ -1,0 +1,68 @@
+propel:
+  _attributes:
+    package: lib.model
+    defaultIdMethod: native
+  entry:
+    _attributes: { phpName: Entry }
+    id: ~
+    title: { phpName: Title, type: VARCHAR, size: '255', required: true }
+    text: { phpName: Text, type: LONGVARCHAR, required: true }
+    slug: { phpName: Slug, type: VARCHAR, size: '255', required: false }
+    created_at: { phpName: CreatedAt, type: TIMESTAMP, required: true }
+    updated_at: { phpName: UpdatedAt, type: TIMESTAMP, required: true }
+    _uniques: { title: [title], slug: [slug] }
+  jury:
+    _attributes: { phpName: Jury }
+    id: ~
+    name: { phpName: Name, type: VARCHAR, size: '255', required: true }
+    description: { phpName: Description, type: LONGVARCHAR, required: true }
+    created_at: { phpName: CreatedAt, type: TIMESTAMP, required: true }
+    updated_at: { phpName: UpdatedAt, type: TIMESTAMP, required: true }
+    _uniques: { name: [name] }
+  project:
+    _attributes: { phpName: Project }
+    id: ~
+    name: { phpName: Name, type: VARCHAR, size: '255', required: true }
+    description: { phpName: Description, type: LONGVARCHAR, required: true }
+    blog: { phpName: Blog, type: VARCHAR, size: '255', required: false }
+    rss: { phpName: Rss, type: VARCHAR, size: '255', required: false }
+    code: { phpName: Code, type: VARCHAR, size: '255', required: false }
+    created_at: { phpName: CreatedAt, type: TIMESTAMP, required: true }
+    updated_at: { phpName: UpdatedAt, type: TIMESTAMP, required: true }
+    _uniques: { name: [name] }
+  participant:
+    _attributes: { phpName: Participant }
+    id: ~
+    name: { phpName: Name, type: VARCHAR, size: '255', required: true }
+    university: { phpName: University, type: VARCHAR, size: '255', required: true }
+    project_id: { phpName: ProjectId, type: integer, required: true, foreignTable: project, foreignReference: id, onDelete: CASCADE, onUpdate: RESTRICT }
+    _indexes: { project_id_idx: [project_id] }
+    _uniques: { name: [name] }
+  project_jury:
+    _attributes: { phpName: ProjectJury }
+    id: ~
+    project_id: { type: integer, foreignTable: project, foreignReference: id, required: true }
+    jury_id: { type: integer, foreignTable: jury, foreignReference: id, required: true }
+    created_at:       ~
+    updated_at:       ~
+  eval_type:
+    id: ~
+    name: { type: varchar, size: '255', required: true, index: unique }
+  eval_question:
+    id: ~
+    name: { type: varchar, size: '255', required: true, index: unique }
+    point:    { type: integer, required: true}
+    eval_type_id: { type: integer, foreignTable: eval_type, foreignReference: id, required: true }
+    comment:  { type: longvarchar, required: true }
+  evaluation:
+    _attributes: { phpName: Evaluation }
+    id: ~
+    devel:          { type: integer, required: true }
+    finished:       { type: integer, required: true }
+    doc:            { type: integer, required: true }
+    community:      { type: integer, required: true }
+    comment:          { type: varchar, size: '255', required: false }
+    finished_form:    { type: boolean, required: false, default: 0 }
+    created_at:       ~
+    updated_at:       ~
+    project_jury_id:  { type: integer, foreignTable: project_jury, foreignReference: id, required: true }

@@ -1,0 +1,20 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        Concurso Software Libre de Madrid
+    description:  Concurso de Software Libre de Madrid
+    keywords:     symfony, project, software libre, open source, madrid
+    language:     es
+    robots:       index, follow
+
+  stylesheets:    [main.css]
+
+  javascripts:    [jquery-1.4.2.min.js, smooth.pack.js, home.js]
+
+  has_layout:     true
+  layout:         layout
