@@ -1,0 +1,16 @@
+cache/
+log/
+.DS_Store
+*~
+*.swp
+.gitignore
+*.kdev4
+.kdev4/
+.directory
+uploads/
+vsms.log
+om/
+map/
+base/
+lib.model.schema.sql
+plugins.sfGuardPlugin.lib.model.schema.sql
