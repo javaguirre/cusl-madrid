@@ -37,6 +37,10 @@
         <p>
         <a href="http://osl.uc3m.es"><img src="/images/colab/logoosluc3m.jpg" alt="Oficina Software Libre Carlos III"/></a>
       </p>
+      </p>
+        <p>
+        <a href="http://150.244.56.228/"><img src="/images/colab/logoCRL.png" alt="Centro de Referencia Linux UAM-IBM"/></a>
+      </p>
     </div>
   </div>
 </div>
