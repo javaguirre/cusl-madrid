@@ -33,7 +33,7 @@ all:
 
     # Enable the database manager
     use_database:           true
-    enabled_modules:        [default, sfCaptchaGD]
+    enabled_modules:        [default, sfSimpleGoogleSitemap, sfCaptchaGD]
     standard_helpers:       [Partial, Cache, I18N]
     i18n:                   true
     error_404_module:       home

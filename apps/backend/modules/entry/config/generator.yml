@@ -19,5 +19,5 @@ generator:
       filter:  ~
       form:    ~
       edit:    ~
-      new:
-        display: [=title, text, slug]
+      new:     ~
+

@@ -5,11 +5,13 @@ propel:
   entry:
     _attributes: { phpName: Entry }
     id: ~
-    title: { phpName: Title, type: VARCHAR, size: '255', required: true }
+    title: { phpName: Title, type: VARCHAR, size: '255', required: true, index: unique }
     text: { phpName: Text, type: LONGVARCHAR, required: true }
-    slug: { phpName: Slug, type: VARCHAR, size: '255', required: false }
+    slug: { phpName: Slug, type: VARCHAR, size: '255', required: false, index: unique }
+    meta: { phpName: Meta, type: VARCHAR, size: '255', required: false }
     created_at: { phpName: CreatedAt, type: TIMESTAMP, required: true }
     updated_at: { phpName: UpdatedAt, type: TIMESTAMP, required: true }
+    published: { type: boolean, required: false, default: false}
     _uniques: { title: [title], slug: [slug] }
   jury:
     _attributes: { phpName: Jury }

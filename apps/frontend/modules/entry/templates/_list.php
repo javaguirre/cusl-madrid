@@ -5,7 +5,7 @@
       <li>
         <div class='view-item view-item-bloque-noticias'>
           <div class='view-field view-data-node-title'>
-            <a href="<?php echo url_for('entry/show')?>?id=<?php echo $entry->getId() ?>&slug=<?php echo $entry->getSlug() ?>">
+            <a href="<?php echo url_for('entry_show', $entry)?>">
               <?php echo $entry->getTitle() ?>
             </a>
           </div>

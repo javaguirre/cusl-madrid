@@ -12,14 +12,14 @@ class entryActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
-    $criteria = new Criteria();
-    $criteria->addDescendingOrderByColumn('created_at');
-    $this->entrys = EntryPeer::doSelect($criteria);
+    $this->entrys = EntryPeer::getPublishedEntries();
   }
 
   public function executeShow(sfWebRequest $request)
   {
-    $this->entry = EntryPeer::retrieveByPk($request->getParameter('id'));
+    $this->entry = EntryPeer::retrieveBySlug($request->getParameter('slug'));
+    $this->getResponse()->addMeta('keywords', $this->entry->getMeta());
+    $this->getResponse()->addMeta('description', $this->entry->getText(ESC_RAW));
     $this->forward404Unless($this->entry);
   }
 
@@ -32,9 +32,6 @@ class entryActions extends sfActions
     $feed->setAuthorEmail('contacto@javaguirre.net');
     $feed->setAuthorName('CUSL Madrid');
 
-//     $feedImage = new sfFeedImage();
-//     $feedImage->setFavicon('http://www.myblog.com/favicon.ico');
-//     $feed->setImage($feedImage);
     $criteria = new Criteria();
     $criteria->setLimit(5);
     $criteria->addAscendingOrderByColumn('created_at');
@@ -48,12 +45,9 @@ class entryActions extends sfActions
       $item->setPubdate($entry->getCreatedAt('U'));
       $item->setUniqueId($entry->getId());
       $item->setDescription($entry->getText());
-
       $feed->addItem($item);
   }
-
   $this->feed = $feed;
-
   }
 
   public function executeRss(sfWebRequest $request)
@@ -64,10 +58,6 @@ class entryActions extends sfActions
     $feed->setLink('http://www.cuslmadrid.org');
     $feed->setAuthorEmail('contacto@javaguirre.net');
     $feed->setAuthorName('CUSL Madrid');
-
-//     $feedImage = new sfFeedImage();
-//     $feedImage->setFavicon('http://www.myblog.com/favicon.ico');
-//     $feed->setImage($feedImage);
     $criteria = new Criteria();
     $criteria->setLimit(5);
     $criteria->addAscendingOrderByColumn('created_at');
@@ -84,8 +74,6 @@ class entryActions extends sfActions
 
       $feed->addItem($item);
   }
-
   $this->feed = $feed;
-
   }
 }

@@ -21,4 +21,5 @@ class Entry extends BaseEntry {
   {
     return sprintf('%s', $this->getTitle());
   }
+  //TODO if slug == null in save, then slugify the title in save method
 } // Entry

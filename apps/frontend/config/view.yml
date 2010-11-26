@@ -8,7 +8,7 @@ default:
   metas:
     title:        Concurso Software Libre de Madrid
     description:  Concurso de Software Libre de Madrid
-    keywords:     symfony, project, software libre, open source, madrid
+    keywords:     software libre, open source, madrid, concurso, symfony, project
     language:     es
     robots:       index, follow
 

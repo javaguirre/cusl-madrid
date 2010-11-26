@@ -6,7 +6,7 @@ homepage:
   url:   /
   param: { module: home, action: index }
 entry_show:
-  url:   /noticias/:id/:slug
+  url:   /noticias/:slug
   class:  sfPropelRoute
   options: { model: Entry, type: object}
   param: { module: entry, action: show}
@@ -16,7 +16,9 @@ bases:
 sf_guard_signin:
   url:   /login
   param: { module: sfGuardAuth, action: signin }
-
+sitemap_xml:
+  url: /sitemap.xml
+  param: { module: sfSimpleGoogleSitemap, action: index }
 # generic rules
 # please, remove them by adding more specific rules
 default_index:

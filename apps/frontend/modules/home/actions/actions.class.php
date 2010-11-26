@@ -16,11 +16,7 @@ class homeActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    $criteria = new Criteria();
-    $criteria->setLimit(5);
-    $criteria->addDescendingOrderByColumn('created_at');
-    $this->entrys = EntryPeer::doSelect($criteria);
-
+    $this->entrys = EntryPeer::getPublishedEntries(5);
     $this->feed = sfFeedPeer::createFromWeb('http://www.concursosoftwarelibre.org/1011/rss.xml');
   }
 
