@@ -19,7 +19,6 @@ class entryActions extends sfActions
   {
     $this->entry = EntryPeer::retrieveBySlug($request->getParameter('slug'));
     $this->getResponse()->addMeta('keywords', $this->entry->getMeta());
-    $this->getResponse()->addMeta('description', $this->entry->getText());
     $this->forward404Unless($this->entry);
   }
 

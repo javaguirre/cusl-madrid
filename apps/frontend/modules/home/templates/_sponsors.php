@@ -1,10 +1,10 @@
 <div class="block block-block" id="block-block-2">
-   <h2 class="title">Inscríbete</h2>
+   <!--<h2 class="title">Inscríbete</h2>
   <div class="content">
     <a href="https://www.concursosoftwarelibre.org/inscripcion">
       <img src="/images/frontend/banner_inscripcion.png" alt="Inscribete aquí" />
     </a>
-  </div>
+  </div>-->
   <h2 class="title">Patrocinador Principal</h2>
   <div class="content">
     <p>

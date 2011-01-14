@@ -8,7 +8,8 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <?php include_stylesheets() ?>
     <?php include_javascripts() ?>
-
+    <link rel="alternate" type="application/rss+xml" title="JavAguirre.net &raquo; Feed" href="<?php echo url_for('entry/rss') ?>" />
+    <link rel="alternate" type="application/atom+xml" title="JavAguirre.net &raquo; Atom" href="<?php echo url_for('entry/feed') ?>" />
   </head>
   <body>
     <div class="main">
@@ -18,7 +19,8 @@
       <div id="sidebar-right">
         <div class="block block-block">
           <h2 class="title">Síguenos</h2>
-          <img src="/images/frontend/rss.png" /> <a href="<?php echo url_for('entry/rss') ?>">RSS CUSL Madrid</a>
+          <img src="/images/frontend/rss.png" /> <a href="<?php echo url_for('entry/rss') ?>">RSS CUSL Madrid</a><br/>
+          <img src="/images/frontend/rss.png" /> <a href="<?php echo url_for('entry/feed') ?>">Atom CUSL Madrid</a>
         </div>
         <div class="block block-block" id="block-block-18">
           <h2 class="title">Patrocinio</h2>

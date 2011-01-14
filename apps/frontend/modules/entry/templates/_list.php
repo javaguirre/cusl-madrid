@@ -17,10 +17,3 @@
     <?php endforeach; ?>
 
     </ul>
-    <div class='view-footer view-footer-bloque-noticias'>
-      <div style="line-height: 14px; margin-top: 20px;">
-        <img src="/images/frontend/rss.png" /> <a href="<?php echo url_for('entry/rss') ?>">RSS CUSL Madrid</a>
-        <br/>
-        <img src="/images/frontend/rss.png" /> <a href="<?php echo url_for('entry/feed') ?>">Atom CUSL Madrid </a>
-      </div>
-    </div>
