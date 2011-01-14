@@ -8,8 +8,8 @@
     <link rel="shortcut icon" href="/images/favicon.ico" />
     <?php include_stylesheets() ?>
     <?php include_javascripts() ?>
-    <link rel="alternate" type="application/rss+xml" title="JavAguirre.net &raquo; Feed" href="<?php echo url_for('entry/rss') ?>" />
-    <link rel="alternate" type="application/atom+xml" title="JavAguirre.net &raquo; Atom" href="<?php echo url_for('entry/feed') ?>" />
+    <link rel="alternate" type="application/rss+xml" title="CUSL Madrid Feed" href="<?php echo url_for('entry/rss') ?>" />
+    <link rel="alternate" type="application/atom+xml" title="CUSL Madrid Atom" href="<?php echo url_for('entry/feed') ?>" />
   </head>
   <body>
     <div class="main">
