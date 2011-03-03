@@ -1,0 +1,84 @@
+/* --------------------------------------------------------------------------------------------------------------------------------------------------
+MENU
+-------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+#menu {
+  height: 30px;
+  padding: 10px;
+  padding-left: 20px;
+  background-color: #fff;
+}
+
+#menu ul#nav {
+  position: relative;
+  float: left;
+}
+
+#menu ul#nav li {
+  float:left;
+  display: inline;
+  margin: 0 1px;
+  padding: 2px 2px;
+  text-align: center;
+  background: #BBB;
+  list-style: none;
+  min-width: 98px;
+}
+
+#menu ul#nav li a {
+  display: block;
+  padding: 5px 10px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#menu ul#nav li a.dropdown {
+  padding-left:10px;
+  margin-left:4px;
+  background:url("/images/backend/dropdown.gif") 5px 50% no-repeat;
+}
+
+#menu ul#nav li.hover {
+  position:relative;
+  background: #333333;
+}
+
+#menu ul#nav ul {
+  width:200px;
+  visibility:hidden;
+  position:absolute;
+  top:100%;
+/*   top: 24; */
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background: #FFFFFF;
+}
+
+#menu ul#nav ul li {
+  float:none;
+  display: block;
+  min-width: 150px;
+  margin: 1px 0;
+  padding: 0;
+  text-align: center;
+}
+
+#menu ul#nav ul li a {
+  display:inline-block;
+  width:100%;
+  padding: 5px 0;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+}
+
+#menu ul#nav ul ul {
+  left:100%;
+  top:0;
+}
+
+#menu ul#nav li:hover > ul {
+  visibility:visible;
+  display: block;
+}

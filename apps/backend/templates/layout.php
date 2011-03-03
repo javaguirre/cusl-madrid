@@ -10,9 +10,13 @@
   </head>
   <body>
     <a href="/" class="banner"><img src="/images/frontend/logomadrid.png" alt="Concurso Universitario de Software Libre"/></a>
-    <?php if($sf_user->isAuthenticated()): ?>
-      <?php include_partial('entry/menu') ?>
-    <?php endif; ?>
+      <?php if($sf_user->isAuthenticated()): ?>
+        <?php if($sf_user->hasCredential('jurado')): ?>
+          <?php include_partial('entry/jurymenu') ?>
+        <?php else: ?>
+          <?php include_partial('entry/menu') ?>
+        <?php endif; ?>
+      <?php endif; ?>
     <?php echo $sf_content ?>
   </body>
 </html>
