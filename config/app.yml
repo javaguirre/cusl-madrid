@@ -1,0 +1,4 @@
+all:
+  sf_guard_plugin:
+    profile_class:      Jury
+    profile_field_name: user_id

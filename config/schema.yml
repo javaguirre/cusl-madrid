@@ -16,6 +16,7 @@ propel:
   jury:
     _attributes: { phpName: Jury }
     id: ~
+    user_id:     { type: integer, foreignTable: sf_guard_user, foreignReference: id, required: true, onDelete: cascade }
     name: { phpName: Name, type: VARCHAR, size: '255', required: true }
     description: { phpName: Description, type: LONGVARCHAR, required: true }
     created_at: { phpName: CreatedAt, type: TIMESTAMP, required: true }
