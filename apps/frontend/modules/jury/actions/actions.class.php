@@ -14,10 +14,4 @@ class juryActions extends sfActions
   {
     $this->jurys =JuryPeer::doSelect(new Criteria());
   }
-
-  public function executeShow(sfWebRequest $request)
-  {
-    $this->jury = JuryPeer::retrieveByPk($request->getParameter('id'));
-    $this->forward404Unless($this->jury);
-  }
 }

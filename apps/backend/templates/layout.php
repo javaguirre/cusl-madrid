@@ -9,6 +9,7 @@
     <?php include_javascripts() ?>
   </head>
   <body>
+    <a href="/" class="banner"><img src="/images/frontend/logomadrid.png" alt="Concurso Universitario de Software Libre"/></a>
     <?php if($sf_user->isAuthenticated()): ?>
       <?php include_partial('entry/menu') ?>
     <?php endif; ?>

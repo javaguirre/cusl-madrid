@@ -6,7 +6,7 @@
   <a href="<?php echo url_for('entry/index') ?>" class="noticias" title="Noticias"><div>Noticias</div></a>
   <a href="<?php echo url_for('home/base')?>" class="bases" title="Bases"><div>Bases</div></a>
   <a href="<?php echo url_for('home/participate') ?>" class="colabora" title="Colabora"><div>Colabora</div></a>
-<!--   <a href="<?php echo url_for('jury/index')?>" class="comite" title="Comité"><div>Comité</div></a> -->
+  <a href="<?php echo url_for('jury/index')?>" class="comite" title="Comité"><div>Comité</div></a>
   <a href="<?php echo url_for('home/contact') ?>" class="contacto" title="Contacto"><div>Contacto</div></a>
 <!--   <a href="#" class="faq" title="FAQ"><div>FAQ</div></a> -->
 <!--   <a href="#" class="final" title="Fase final"><div>Fase final</div></a> -->

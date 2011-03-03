@@ -14,8 +14,6 @@
   <h2 class="title">Patrocina</h2>
   <div class="content">
     <p>
-    <a href="http://www.interdominios.com/"><img src="/images/sponsors/interdominios-logo.gif" alt="Interdominios"/></a>
-    <br/>
     <a href="http://brainsins.com/"><img src="/images/sponsors/brainsins.png" alt="BrainSins"/></a>
     </p>
   </div>
