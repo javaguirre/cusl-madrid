@@ -14,7 +14,8 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
+      list:
+        display: [=name, point, eval_type, comment]
       filter:  ~
       form:    ~
       edit:    ~
