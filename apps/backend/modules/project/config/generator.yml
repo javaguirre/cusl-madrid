@@ -15,6 +15,10 @@ generator:
       actions: ~
       fields:  ~
       list:
+        batch_actions:
+          choose: ~
+        object_actions:
+          choose: ~
         display: [=name, description, blog, rss, code]
       filter:  ~
       form:    ~

@@ -60,7 +60,7 @@ class homeActions extends sfActions
   }
   public function executePlanet(sfWebRequest $request)
   {
-    $projects =ProjectPeer::doSelect(new Criteria());
+    $projects = ProjectPeer::doSelect(new Criteria());
     $rss = array();
     foreach($projects as $key=>$project)
     {
@@ -75,7 +75,7 @@ class homeActions extends sfActions
   }
   public function executeRssplanet(sfWebRequest $request)
   {
-    $projects =ProjectPeer::doSelect(new Criteria());
+    $projects = ProjectPeer::doSelect(new Criteria());
     $rss = array();
     foreach($projects as $key=>$project)
     {

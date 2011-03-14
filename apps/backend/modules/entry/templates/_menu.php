@@ -1,4 +1,4 @@
-<ul>
+<ul id="nav">
   <li><a href="<?php echo url_for('sf_guard_user')?>">Users</a></li>
   <li><a href="<?php echo url_for('sf_guard_permission')?>">Permissions</a></li>
   <li><a href="<?php echo url_for('entry')?>">Posts</a></li>
