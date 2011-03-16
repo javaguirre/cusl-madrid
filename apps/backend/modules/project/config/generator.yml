@@ -15,12 +15,15 @@ generator:
       actions: ~
       fields:  ~
       list:
-        batch_actions:
-          choose: ~
+        peer_method: doSelectEvalProjects
+        batch_actions: {}
         object_actions:
-          choose: ~
+          _edit:   ~
+          _delete: ~
+          choose:  ~
         display: [=name, description, blog, rss, code]
-      filter:  ~
+      filter:
+        class: false
       form:    ~
       edit:    ~
       new:     ~

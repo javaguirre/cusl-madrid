@@ -15,7 +15,11 @@ generator:
       actions: ~
       fields:  ~
       list:
+        peer_method: doSelectByUser
         display: [ jury, project ]
+        batch_actions: {}
+        object_actions:
+            evaluate: ~
       filter:  ~
       form:    ~
       edit:    ~

@@ -18,4 +18,12 @@
  */
 class ProjectPeer extends BaseProjectPeer {
 
+    public static function doSelectEvalProjects()
+    {
+        $criteria = new Criteria();
+        $criteria->add(ProjectPeer::BLOG, '', Criteria::NOT_EQUAL);
+        $criteria->add(ProjectPeer::RSS, '', Criteria::NOT_EQUAL);
+
+        return self::doSelect($criteria);
+    }
 } // ProjectPeer

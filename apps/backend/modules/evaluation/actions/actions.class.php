@@ -15,7 +15,7 @@ class evaluationActions extends autoEvaluationActions
 {
   public function executeEval(sfWebRequest $request)
   {
-    //TODO Get the project and the evaluator from the jury
+    $project = $request->getParameter('id');
     $this->form = new ExampleEvalForm();
   }
 

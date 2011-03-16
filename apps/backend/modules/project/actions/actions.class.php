@@ -35,12 +35,18 @@ class projectActions extends autoProjectActions
     public function executeListChoose(sfWebRequest $request)
     {
         $id = $request->getParameter('id');
-
-        $project_jury = new ProjectJury();
-        $project_jury->setProjectId($id);
-        $project_jury->setJuryId($this->getUser()->getProfile()->getId());
-        $project_jury->save();
-
+        $criteria = new Criteria();
+        $criteria->add(ProjectJuryPeer::PROJECT_ID, $id);
+        $criteria->add(ProjectJuryPeer::JURY_ID, $this->getUser()->getProfile()->getId());
+        $elem = ProjectJuryPeer::doSelectOne($criteria);
+        
+        if($elem == null)
+        {
+            $project_jury = new ProjectJury();
+            $project_jury->setProjectId($id);
+            $project_jury->setJuryId($this->getUser()->getProfile()->getId());
+            $project_jury->save();
+        }
         $this->getUser()->setFlash('notice', 'Project selected successfully.');
 
         $this->redirect('project/index');

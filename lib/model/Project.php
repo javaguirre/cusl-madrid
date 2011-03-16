@@ -22,4 +22,19 @@ class Project extends BaseProject {
     return sprintf('%s', $this->getName());
 
   }
+
+  public function hasJury()
+  {
+    $jurys = $this->getProjectJurys();
+    
+    foreach($jurys as $jury)
+    {
+        if ($jury->getJuryId() == sfContext::getInstance()->getUser()->getGuardUser()->getProfile()->getId())
+        {
+            return true;
+        }
+    }
+
+    return false;
+  }
 } // Project

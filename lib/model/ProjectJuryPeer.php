@@ -18,4 +18,11 @@
  */
 class ProjectJuryPeer extends BaseProjectJuryPeer {
 
+    public static function doSelectByUser()
+    {
+        $criteria = new Criteria();
+        $criteria->add(ProjectJuryPeer::JURY_ID, sfContext::getInstance()->getUser()->getGuardUser()->getProfile()->getId());
+
+        return self::doSelect($criteria);
+    }
 } // ProjectJuryPeer
