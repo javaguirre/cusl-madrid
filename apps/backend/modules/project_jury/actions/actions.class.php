@@ -13,4 +13,8 @@ require_once dirname(__FILE__).'/../lib/project_juryGeneratorHelper.class.php';
  */
 class project_juryActions extends autoProject_juryActions
 {
+    public function executeListEvaluate(sfWebRequest $request)
+    {
+        $this->redirect('evaluation/eval?id='.$request->getParameter('id'));
+    }
 }
