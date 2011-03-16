@@ -14,7 +14,7 @@ default:
 
   stylesheets:    [backend.css]
 
-  javascripts:    [jquery-1.4.2.min.js, tiny_mce/tiny_mce.js]
+  javascripts:    [jquery-1.4.2.min.js, tiny_mce/tiny_mce.js, jquery.jqplot.min.js, excanvas.min.js]
 
   has_layout:     true
   layout:         layout

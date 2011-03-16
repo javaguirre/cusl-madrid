@@ -13,6 +13,28 @@ require_once dirname(__FILE__).'/../lib/projectGeneratorHelper.class.php';
  */
 class projectActions extends autoProjectActions
 {
+    public function executeIndex(sfWebRequest $request)
+    {
+      // sorting
+      if ($request->getParameter('sort') && $this->isValidSortColumn($request->getParameter('sort')))
+      {
+        $this->setSort(array($request->getParameter('sort'), $request->getParameter('sort_type')));
+      }
+
+      // pager
+      if ($request->getParameter('page'))
+      {
+        $this->setPage($request->getParameter('page'));
+     } 
+
+      $this->pager = $this->getPager();
+      $this->sort = $this->getSort();
+
+      //Provisional :-)
+      $grafica = array(array(1,1), array(1.5, 2.25), array(2,4), array(2.5,6.25), array(3,9), array(3.5,12.25), array(4,16));
+      $this->grafica = json_encode($grafica);
+    }
+
     public function executeBatchChoose(sfWebRequest $request)
     {
         $ids = $request->getParameter('ids');

@@ -21,4 +21,18 @@ class ProjectJury extends BaseProjectJury {
   {
     return sprintf('%s %s', $this->getProject(), $this->getJury());
   }
+
+  public function getMyMarks()
+  {
+    $elem = EvaluationPeer::retrieveByProjectJuryId($this->getId());
+    if ($elem == null)
+    {
+        $value = 0;
+    }
+    else
+    {
+        $value = $elem->getTotal();
+    }
+    return $value;
+  }
 } // ProjectJury

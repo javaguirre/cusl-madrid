@@ -37,4 +37,23 @@ class Project extends BaseProject {
 
     return false;
   }
+
+  public function getMarks()
+  {
+
+//     $elems = ProjectJuryPeer::doSelectJoinEvaluation($criteria);
+    return 0;
+  }
+
+  public function getEvals()
+  {
+    //TODO Number of evals
+    return 0;
+  }
+
+  public function getTotal()
+  {
+    //TODO Calculate marks/evals
+    return 0;
+  }
 } // Project

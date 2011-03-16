@@ -16,11 +16,12 @@ generator:
       fields:  ~
       list:
         peer_method: doSelectByUser
-        display: [ jury, project ]
+        display: [ jury, project, my_marks ]
         batch_actions: {}
         object_actions:
             evaluate: ~
-      filter:  ~
+      filter:
+        class: false
       form:    ~
       edit:    ~
       new:     ~

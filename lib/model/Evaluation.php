@@ -29,4 +29,9 @@ class Evaluation extends BaseEvaluation {
 		parent::__construct();
 	}
 
+	public function getTotal()
+	{
+        return $this->getDevel()+$this->getFinished()+$this->getDoc()+$this->getCommunity();
+    }
+
 } // Evaluation

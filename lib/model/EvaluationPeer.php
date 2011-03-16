@@ -18,4 +18,22 @@
  */
 class EvaluationPeer extends BaseEvaluationPeer {
 
+    public static function retrieveByProjectJuryId($project_jury_id, PropelPDO $con = null)
+    {
+
+        if (null !== ($obj = EvaluationPeer::getInstanceFromPool((string) $project_jury_id))) {
+            return $obj;
+        }
+
+        if ($con === null) {
+            $con = Propel::getConnection(EvaluationPeer::DATABASE_NAME, Propel::CONNECTION_READ);
+        }
+
+        $criteria = new Criteria(EvaluationPeer::DATABASE_NAME);
+        $criteria->add(EvaluationPeer::PROJECT_JURY_ID, $project_jury_id);
+
+        $v = EvaluationPeer::doSelect($criteria, $con);
+
+        return !empty($v) > 0 ? $v[0] : null;
+    }
 } // EvaluationPeer

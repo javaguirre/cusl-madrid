@@ -21,7 +21,7 @@ generator:
           _edit:   ~
           _delete: ~
           choose:  ~
-        display: [=name, description, blog, rss, code]
+        display: [=name, description, blog, rss, code, marks, evals, total]
       filter:
         class: false
       form:    ~
