@@ -12,7 +12,7 @@
     $.jqplot.config.enablePlugins = true;
     line1 = <?php echo $sf_data->getRaw('grafica'); ?>;
     plot1 = $.jqplot('chart1', [line1], {
-        legend:{show: true, location: 'ne'}, title: 'Totales',
+        legend:{show: false, location: 'ne'}, title: 'Totales',
         seriesDefaults:{
             renderer:$.jqplot.BarRenderer,
             rendererOptions:{barPadding: 8, barMargin: 20, varyBarColor: true}
