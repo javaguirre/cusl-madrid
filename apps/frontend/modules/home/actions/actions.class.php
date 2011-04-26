@@ -55,37 +55,19 @@ class homeActions extends sfActions
   public function executeBase(sfWebRequest $request)
   {
   }
+  
   public function executeParticipate(sfWebRequest $request)
   {
   }
+  
   public function executePlanet(sfWebRequest $request)
   {
-    $projects = ProjectPeer::doSelect(new Criteria());
-    $rss = array();
-    foreach($projects as $key=>$project)
-    {
-      //TODO Check Rss
-      if ($project->getRss() !== '')
-      {
-        $rss[$key] = sfFeedPeer::createFromWeb($project->getRss());
-      }
-    }
-
-    $this->feed = sfFeedPeer::aggregate($rss, array('limit' => 20));
+    $this->items = Concurso::getPlanet();
   }
+  
   public function executeRssplanet(sfWebRequest $request)
   {
-    $projects = ProjectPeer::doSelect(new Criteria());
-    $rss = array();
-    foreach($projects as $key=>$project)
-    {
-      //TODO Check Rss
-      if ($project->getRss() !== '')
-      {
-        $rss[$key] = sfFeedPeer::createFromWeb($project->getRss());
-      }
-    }
-
-    $this->feed = sfFeedPeer::aggregate($rss, array('limit' => 20));
+    $this->items = Concurso::getPlanet();
   }
+  
 }

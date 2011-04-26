@@ -1,7 +1,7 @@
 <?php use_helper('Date') ?>
 <h1>Planet</h1>
 <br/>
-<?php foreach($feed->getItems() as $key=>$post): ?>
+<?php foreach($items as $key=>$post): ?>
   <li id="news<?php echo $key ?>" style="list-style-type: none;">
     <div class='view-item view-item-bloque-noticias'>
       <div class='view-field view-data-node-title'>
